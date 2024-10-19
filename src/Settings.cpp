@@ -20,6 +20,7 @@ const CRGBA Settings::COLOR_DEFAULT(255, 255, 255);
 // [MAIN]
 
 unsigned int Settings::s_keyCodeOnOff = Settings::KEY_CODE_ON_OFF;
+bool Settings::s_modEnabledByDefault = false;
 bool Settings::s_drawTags = true;
 bool Settings::s_drawSnapshots = true;
 bool Settings::s_drawHorseshoes = true;
@@ -50,6 +51,7 @@ void Settings::read() {
     // [MAIN]
 
     s_keyCodeOnOff = static_cast<unsigned int>(iniReader.ReadInteger("MAIN", "on_off_key", static_cast<int>(KEY_CODE_ON_OFF)));
+    s_modEnabledByDefault = iniReader.ReadBoolean(MAIN, "activated_by_default", false);
 
     s_drawTags = iniReader.ReadBoolean(MAIN, "show_tags", true);
     s_drawSnapshots = iniReader.ReadBoolean(MAIN, "show_snapshots", true);

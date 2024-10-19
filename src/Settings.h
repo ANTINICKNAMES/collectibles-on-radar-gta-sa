@@ -23,6 +23,7 @@ public:
     // [MAIN]
 
     static unsigned int s_keyCodeOnOff;
+    static bool s_modEnabledByDefault;
     static bool s_drawTags;
     static bool s_drawSnapshots;
     static bool s_drawHorseshoes;

@@ -25,6 +25,7 @@ public:
         plugin::Events::initRwEvent += []
         {
             Settings::read();
+            s_modEnabled = Settings::s_modEnabledByDefault;
         };
 
         plugin::Events::gameProcessEvent += []
